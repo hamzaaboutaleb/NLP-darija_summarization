@@ -4,7 +4,7 @@ Automatic text summarization for **Moroccan Darija** — three independent appro
 
 ---
 
-## 📁 Repository Structure
+##  Repository Structure
 
 ```
 darija-summarization/
@@ -20,7 +20,7 @@ darija-summarization/
 
 ---
 
-## 📊 Dataset Format
+##  Dataset Format
 
 Place your dataset at the root as `dataset.csv` with at least these two columns:
 
@@ -40,15 +40,15 @@ Place your dataset at the root as `dataset.csv` with at least these two columns:
 | **File** | `approach_1_nlp_extractive.py` | `approach_2_ml_transformers.py` | `approach_3_ml_textrank.py` |
 | **Type** | Extractive | **Abstractive** | Extractive |
 | **Algorithm** | TF-IDF sentence scoring | mT5 / mBART fine-tuning | TextRank (PageRank on sentences) |
-| **Needs labels?** | ❌ No | ✅ Yes | ❌ No |
-| **Needs GPU?** | ❌ No | ✅ Recommended | ❌ No |
+| **Needs labels?** |  No |  Yes |  No |
+| **Needs GPU?** |  No |  Recommended |  No |
 | **Output style** | Picks original sentences | Generates new text | Picks original sentences |
-| **Speed** | ⚡ Very fast | 🐢 Slow (training) | ⚡ Fast |
+| **Speed** | Very fast |  Slow (training) |  Fast |
 | **Best for** | Quick baseline | Highest quality | Balanced accuracy/speed |
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### 1. Install dependencies
 
@@ -90,7 +90,7 @@ Each script prints sample summaries to the console and saves results to a CSV:
 
 ---
 
-## 🧠 Approach Details
+##  Approach Details
 
 ### Approach 1 — TF-IDF Extractive (`approach_1_nlp_extractive.py`)
 
@@ -134,7 +134,7 @@ BASE_MODEL = "facebook/mbart-large-cc25"
 
 **Evaluation metric:** ROUGE-1, ROUGE-2, ROUGE-L (requires `rouge-score`).
 
-> ⚠️ Training requires ~4 GB GPU memory with `BATCH_SIZE=4`. Reduce batch size or use `fp16=False` on CPU.
+>  Training requires ~4 GB GPU memory with `BATCH_SIZE=4`. Reduce batch size or use `fp16=False` on CPU.
 
 ---
 
@@ -157,7 +157,7 @@ MAX_ITER      = 100    # PageRank convergence iterations
 
 ---
 
-## 🌍 Darija Language Notes
+##  Darija Language Notes
 
 - All three approaches support **Latin-script Darija** out of the box
 - For **Arabic-script Darija**, Approach 2 (mT5) handles it natively; Approaches 1 & 3 work but benefit from Arabic-aware tokenization
@@ -166,7 +166,7 @@ MAX_ITER      = 100    # PageRank convergence iterations
 
 ---
 
-## 📈 Evaluation Output
+##  Evaluation Output
 
 After running any script, a results CSV is generated:
 
@@ -194,15 +194,9 @@ sentencepiece>=0.1.99
 rouge-score>=0.1.2
 ```
 
----
 
-## 📄 License
 
-MIT License — feel free to use, modify, and distribute.
-
----
-
-## 🤝 Contributing
+##  Contributing
 
 Pull requests are welcome! Ideas for improvement:
 - Add Arabic-script Darija tokenizer
